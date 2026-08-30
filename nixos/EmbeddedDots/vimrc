@@ -30,7 +30,8 @@ cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
 cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
 cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
 
- 
+let mapleader = " " 
+
 " NERDTree
 
 " \ = focus NERDTree, or toggle it closed if already focused

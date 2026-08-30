@@ -14,7 +14,7 @@
     environment.systemPackages = with pkgs; [
       woomer
       gromit-mpx
-
+      
       cosmic-ext-applet-caffeine
       # cosmic-ext-tweaks
       cosmic-ext-applet-minimon

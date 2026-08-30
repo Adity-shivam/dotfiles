@@ -70,7 +70,6 @@
       # kdePackages.wacomtablet 
 
       inputs.zen-browser.packages.x86_64-linux.default
-      
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -82,6 +81,9 @@
   # };
 
   # Enable Zsh
+    environment.shells = with pkgs; [ bash zsh ];
+    users.defaultUserShell = pkgs.zsh;
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;

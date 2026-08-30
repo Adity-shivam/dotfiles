@@ -45,31 +45,31 @@
   # comment Sync and hybrid for Pure offload mode
   # comment sync and uncomment other 2 for 2 boot entry rebuilds 
 
-###  # Sync mode (always use dedicated)
-###
-###    hardware.nvidia.prime = {
-###      sync.enable = true;
-###      
-###    # integrated
-###    amdgpuBusId = "PCI:6:0:0";
-###
-###    # dedicated
-###    nvidiaBusId = "PCI:1:0:0";    
-###
-###    };
+  # Sync mode (always use dedicated)
 
-  # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
-  
     hardware.nvidia.prime = {
-      offload.enable =  true;
-      offload.enableOffloadCmd = true;
-
+      sync.enable = true;
+      
     # integrated
-      amdgpuBusId = "PCI:6:0:0";
+    amdgpuBusId = "PCI:6:0:0";
 
     # dedicated
-      nvidiaBusId = "PCI:1:0:0";    
+    nvidiaBusId = "PCI:1:0:0";    
+
     };
+
+###  # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
+###  
+###    hardware.nvidia.prime = {
+###      offload.enable =  true;
+###      offload.enableOffloadCmd = true;
+###  
+###    # integrated
+###      amdgpuBusId = "PCI:6:0:0";
+###  
+###    # dedicated
+###      nvidiaBusId = "PCI:1:0:0";    
+###    };
 
 ###  # Hybrid mode - give 2 boot entries per rebuild 
 ###    

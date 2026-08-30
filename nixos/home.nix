@@ -70,42 +70,11 @@
       ignorecase = true;
       smartcase = true;
       modeline = false;
-      
+      history = 100;
+      hidden = true;
     };
-    extraConfig = 
-      "
-      set nocompatible
-      set softtabstop=2
+    extraConfig = builtins.readFile ./EmbeddedDots/vimrc;
 
-      set hlsearch
-      set t_Co=256
-      set termguicolors
-
-      set wildmenu
-      syntax on
-
-      set showcmd
-      set laststatus=2
-
-      set breakindent
-      set scrolloff=10
-
-      set conceallevel=1
-      set showmode
-
-      nnoremap <Esc> <cmd>nohlsearch<CR>
-      
-      cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
-      cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
-      cabbrev <expr> Wqa getcmdtype() == ':' && getcmdline() ==# 'Wqa' ? 'wqa' : 'Wqa'
-      cabbrev <expr> WQ getcmdtype() == ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
-      cabbrev <expr> WQa getcmdtype() == ':' && getcmdline() ==# 'WQa' ? 'wqa' : 'WQa'
-      cabbrev <expr> WQA getcmdtype() == ':' && getcmdline() ==# 'WQA' ? 'wqa' : 'WQA'
-      
-      cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
-      cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
-      cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
-      "; 
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

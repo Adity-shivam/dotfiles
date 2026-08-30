@@ -1,0 +1,92 @@
+23:28:06.793 [ATL-Logging-Thread] INFO  - Organising filesystem
+
+23:28:06.795 [ATL-Logging-Thread] INFO  - ATLauncher Version: 3.4.40.2 [3bbdd79c5cbf32275f3a3be5d415c2bdd53207c7]
+
+23:28:06.796 [ATL-Logging-Thread] INFO  - App Arguments: ["--working-dir","**USERSDIR**","--no-launcher-update"]
+
+23:28:06.796 [ATL-Logging-Thread] INFO  - JVM Arguments: []
+
+23:28:06.796 [ATL-Logging-Thread] INFO  - Java Version: Java 21 (21.0.10)
+
+23:28:06.797 [ATL-Logging-Thread] INFO  - 64 Bit Java: true
+
+23:28:06.797 [ATL-Logging-Thread] INFO  - RAM Available: 15321MB
+
+23:28:06.798 [ATL-Logging-Thread] INFO  - Launcher Directory: **USERSDIR**
+
+23:28:06.826 [ATL-Logging-Thread] INFO  - GPU: unknown (unknown) unknown 0MB VRAM
+
+23:28:06.943 [ATL-Logging-Thread] INFO  - CPU: AMD Ryzen 5 5600H with Radeon Graphics 6 cores/12 threads
+
+23:28:06.944 [ATL-Logging-Thread] INFO  - Operating System: NixOS (25.11 (Xantusia) build 6.12.93)
+
+23:28:06.945 [ATL-Logging-Thread] INFO  - Bitness: 64
+
+23:28:06.948 [ATL-Logging-Thread] INFO  - Uptime: 32783
+
+23:28:06.949 [ATL-Logging-Thread] INFO  - Manufacturer: GNU/Linux
+
+23:28:06.949 [ATL-Logging-Thread] INFO  - Showing splash screen and loading everything
+
+23:28:06.950 [ATL-Logging-Thread] INFO  - Checking for updated files!
+
+23:28:18.514 [ATL-Logging-Thread] INFO  - Finished downloading updated files!
+
+23:28:23.791 [ATL-Logging-Thread] INFO  - Launcher finished loading everything
+
+23:28:23.792 [ATL-Logging-Thread] WARN  - Launcher not setup. Loading Setup Dialog
+
+23:28:24.102 [ATL-Logging-Thread] ERROR - Error on GraphQL query
+
+23:28:24.104 [ATL-Logging-Thread] ERROR - com.apollographql.apollo.exception.ApolloHttpException: HTTP 403 Forbidden
+
+23:28:24.105 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor.parse(ApolloParseInterceptor.java:108)
+
+23:28:24.108 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor$1.onResponse(ApolloParseInterceptor.java:53)
+
+23:28:24.108 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloServerInterceptor$executeHttpCall$1.onResponse(ApolloServerInterceptor.kt:114)
+
+23:28:24.109 [ATL-Logging-Thread] ERROR - 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)
+
+23:28:24.115 [ATL-Logging-Thread] ERROR - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+23:28:24.116 [ATL-Logging-Thread] ERROR - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+23:28:24.116 [ATL-Logging-Thread] ERROR - 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+23:28:24.118 [ATL-Logging-Thread] ERROR - com.apollographql.apollo.exception.ApolloHttpException: HTTP 403 Forbidden
+	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor.parse(ApolloParseInterceptor.java:108)
+	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor$1.onResponse(ApolloParseInterceptor.java:53)
+	at com.apollographql.apollo.internal.interceptor.ApolloServerInterceptor$executeHttpCall$1.onResponse(ApolloServerInterceptor.kt:114)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+23:28:24.119 [ATL-Logging-Thread] ERROR - Error fetching news
+
+23:28:24.119 [ATL-Logging-Thread] ERROR - com.apollographql.apollo.exception.ApolloHttpException: HTTP 403 Forbidden
+
+23:28:24.122 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor.parse(ApolloParseInterceptor.java:108)
+
+23:28:24.123 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor$1.onResponse(ApolloParseInterceptor.java:53)
+
+23:28:24.123 [ATL-Logging-Thread] ERROR - 	at com.apollographql.apollo.internal.interceptor.ApolloServerInterceptor$executeHttpCall$1.onResponse(ApolloServerInterceptor.kt:114)
+
+23:28:24.125 [ATL-Logging-Thread] ERROR - 	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)
+
+23:28:24.125 [ATL-Logging-Thread] ERROR - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+23:28:24.127 [ATL-Logging-Thread] ERROR - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+23:28:24.127 [ATL-Logging-Thread] ERROR - 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+23:28:24.128 [ATL-Logging-Thread] ERROR - com.apollographql.apollo.exception.ApolloHttpException: HTTP 403 Forbidden
+	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor.parse(ApolloParseInterceptor.java:108)
+	at com.apollographql.apollo.internal.interceptor.ApolloParseInterceptor$1.onResponse(ApolloParseInterceptor.java:53)
+	at com.apollographql.apollo.internal.interceptor.ApolloServerInterceptor$executeHttpCall$1.onResponse(ApolloServerInterceptor.kt:114)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+

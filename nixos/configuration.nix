@@ -152,4 +152,15 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
+
+  ### Home-Manager
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "adi" = import ./home.nix;
+    };
+
+  };
+
 }

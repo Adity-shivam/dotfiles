@@ -32,26 +32,24 @@ cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
 
  
 " NERDTree
-  " nnoremap <C-n> :NERDTreeToggle<CR>
-  " nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 " \ = focus NERDTree, or toggle it closed if already focused
-  nnoremap <silent> \ :NERDTreeFocus<CR>
+nnoremap <silent> \ :NERDTreeFocus<CR>
 
 " Inside NERDTree, \ closes it
-  autocmd FileType nerdtree nnoremap <buffer> <silent> \
-      :NERDTreeToggle<CR>
+autocmd FileType nerdtree nnoremap <buffer> <silent> \ :NERDTreeToggle<CR>
 
 " Close Vim if NERDTree is the only remaining window
-  autocmd BufEnter *
-      \ if winnr('$') == 1 &&
-      \ exists('b:NERDTree') &&
-      \ b:NERDTree.isTabTree() |
-      \ quit |
-      \ endif
+autocmd BufEnter * 
+    \ if winnr('$') == 1 &&
+    \ exists('b:NERDTree') &&
+    \ b:NERDTree.isTabTree() |
+    \ quit |
+    \ endif
 
-" NerdTree Options
-  " let NERDTreeShowHidden = 1
-  let NERDTreeWinSize = 30
-  let NERDTreeWinPos = "left"
-  let NERDTreeMapToggleHidden = 'H'
+" Nerd Tree options
+" let NERDTreeShowHidden = 1
+let NERDTreeWinSize = 30
+let NERDTreeWinPos = "left"
+let NERDTreeMapToggleHidden = 'H'
+

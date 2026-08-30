@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -17,6 +17,8 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -34,18 +36,18 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    xournalpp
-    rnote
-    obsidian
-    arduino-ide
-    zed-editor
-    kicad
-    freecad
-    blender
-    fritzing
-    logisim
-    winboat    
-    gcc
+    pkgs.xournalpp
+    pkgs.rnote
+    pkgs.obsidian
+    pkgs.arduino-ide
+    pkgs.zed-editor
+    pkgs.kicad
+    pkgs.freecad
+    pkgs.blender
+    pkgs.fritzing
+    pkgs.logisim
+    pkgs.winboat    
+    pkgs.gcc
       
     inputs.zen-browser.packages.x86_64-linux.default
   ];

@@ -45,7 +45,7 @@
  
   # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-    nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
+    # nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

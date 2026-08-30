@@ -5,7 +5,7 @@
     services.desktopManager.cosmic.enable = true;
     services.desktopManager.cosmic.xwayland.enable = true;
     services.desktopManager.cosmic.showExcludedPkgsWarning = true;  
-    environment.cosmic.excludePackages = [ pkgs.cosmic-reader ];  
+    environment.cosmic.excludePackages = [ ];  
 
   # Enable Login Manager
     # services.displayManager.gdm.enable = true;

@@ -6,7 +6,7 @@
       isNormalUser = true;
       description = "Aditya Shivam";
       extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
-      packages = with pkgs; [];
+      packages = with pkgs; [ ];
     };
 
 }

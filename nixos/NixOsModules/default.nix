@@ -10,5 +10,7 @@
     ./virtualisation.nix
     ./wacom.nix
     ./nix-helper.nix
+    ./time-zone.nix
+    ./kb-layout.nix
   ];
 }

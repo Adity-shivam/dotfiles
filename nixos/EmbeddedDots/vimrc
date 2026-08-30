@@ -19,7 +19,11 @@ set showmode
 
 nnoremap <Esc> <cmd>nohlsearch<CR>
 
-set guicursor=n-v-c:block,i-ci:ver25,r-cr:hor20,o:hor50
+" change cursor depending mode
+" set guicursor=n-v-c:block,i-ci:ver25,r-cr:hor20,o:hor50
+:let &t_SI = "\<Esc>[6 q"
+:let &t_EI = "\<Esc>[2 q"
+:let &t_SR = "\<Esc>[4 q"
 
 cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
 cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'

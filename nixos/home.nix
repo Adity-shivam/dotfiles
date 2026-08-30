@@ -34,6 +34,20 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    xournalpp
+    rnote
+    obsidian
+    arduino-ide
+    zed-editor
+    kicad
+    freecad
+    blender
+    fritzing
+    logisim
+    winboat    
+    gcc
+      
+    inputs.zen-browser.packages.x86_64-linux.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

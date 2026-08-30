@@ -55,21 +55,6 @@
       fzf
       btop
 
-      xournalpp
-      rnote
-      obsidian
-      arduino-ide
-      zed-editor
-      kicad
-      freecad
-      blender
-      fritzing
-      logisim
-      winboat    
-      gcc
-      # kdePackages.wacomtablet 
-
-      inputs.zen-browser.packages.x86_64-linux.default
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -96,13 +81,6 @@
       };
     };
 
-  # Enable Web Browser
-    programs.firefox = {
-      enable = true;
-      policies.Homepage.StartPage = "https://nixos.org";
-      policies.DisableTelemetry = true;
-    };
-
   # Enable git
     programs.git = {
       enable = true;
@@ -111,6 +89,13 @@
       	user.email = "adishivam1507@gmail.com";
       	init.defaultBranch = "main";
       };
+    };
+
+  # Enable Web Browser
+    programs.firefox = {
+      enable = true;
+      policies.Homepage.StartPage = "https://nixos.org";
+      policies.DisableTelemetry = true;
     };
 
   # Enable neovim

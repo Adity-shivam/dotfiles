@@ -6,5 +6,8 @@
 
   # Enable extra vendor Drivers
     boot.initrd.unl0kr.allowVendorDrivers = true;
+      
+
+  # kdePackages.wacomtablet # add to packages
 }
 

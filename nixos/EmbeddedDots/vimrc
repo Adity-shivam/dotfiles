@@ -1,32 +1,57 @@
-      set nocompatible
-      set softtabstop=2
+set nocompatible
+set softtabstop=2
 
-      set hlsearch
-      set t_Co=256
-      set termguicolors
+set hlsearch
+set t_Co=256
+set termguicolors
 
-      set wildmenu
-      syntax on
+set wildmenu
+syntax on
 
-      set showcmd
-      set laststatus=2
+set showcmd
+set laststatus=2
 
-      set breakindent
-      set scrolloff=10
+set breakindent
+set scrolloff=10
 
-      set conceallevel=1
-      set showmode
+set conceallevel=1
+set showmode
 
-      nnoremap <Esc> <cmd>nohlsearch<CR>
-      
-      cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
-      cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
-      cabbrev <expr> Wqa getcmdtype() == ':' && getcmdline() ==# 'Wqa' ? 'wqa' : 'Wqa'
-      cabbrev <expr> WQ getcmdtype() == ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
-      cabbrev <expr> WQa getcmdtype() == ':' && getcmdline() ==# 'WQa' ? 'wqa' : 'WQa'
-      cabbrev <expr> WQA getcmdtype() == ':' && getcmdline() ==# 'WQA' ? 'wqa' : 'WQA'
-      
-      cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
-      cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
-      cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
+nnoremap <Esc> <cmd>nohlsearch<CR>
+
+cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
+cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
+cabbrev <expr> Wqa getcmdtype() == ':' && getcmdline() ==# 'Wqa' ? 'wqa' : 'Wqa'
+cabbrev <expr> WQ getcmdtype() == ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
+cabbrev <expr> WQa getcmdtype() == ':' && getcmdline() ==# 'WQa' ? 'wqa' : 'WQa'
+cabbrev <expr> WQA getcmdtype() == ':' && getcmdline() ==# 'WQA' ? 'wqa' : 'WQA'
+
+cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
+cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
+cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
+
  
+" NERDTree
+  " nnoremap <C-n> :NERDTreeToggle<CR>
+  " nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+
+" \ = focus NERDTree, or toggle it closed if already focused
+  nnoremap <silent> \ :NERDTreeFocus<CR>
+
+" Inside NERDTree, \ closes it
+  autocmd FileType nerdtree nnoremap <buffer> <silent> \
+      :NERDTreeToggle<CR>
+
+" Close Vim if NERDTree is the only remaining window
+  autocmd BufEnter *
+      \ if winnr('$') == 1 &&
+      \ exists('b:NERDTree') &&
+      \ b:NERDTree.isTabTree() |
+      \ quit |
+      \ endif
+
+" NerdTree Options
+  " let NERDTreeShowHidden = 1
+  let NERDTreeWinSize = 30
+  let NERDTreeWinPos = "left"
+  let NERDTreeMapToggleHidden = 'H'

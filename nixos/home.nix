@@ -64,12 +64,13 @@
       tabstop = 2;
       shiftwidth = 2;
       mouse = "c";
+      mousefocus = true;
       copyindent = true;
       undofile = false;
       ignorecase = true;
       smartcase = true;
       modeline = false;
-
+      
     };
     extraConfig = 
       "

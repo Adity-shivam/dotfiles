@@ -1,12 +1,16 @@
 set nocompatible
 set softtabstop=2
 
+set incsearch
 set hlsearch
 set t_Co=256
+" colorscheme catppuccin
 set termguicolors
 
 set wildmenu
 syntax on
+set lazyredraw
+set showmatch
 
 set showcmd
 set laststatus=2
@@ -18,6 +22,11 @@ set conceallevel=1
 set showmode
 
 nnoremap <Esc> <cmd>nohlsearch<CR>
+
+set foldenable
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
 
 " change cursor depending mode
 " set guicursor=n-v-c:block,i-ci:ver25,r-cr:hor20,o:hor50

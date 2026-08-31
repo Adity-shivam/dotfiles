@@ -31,6 +31,7 @@
       fzf
       btop
       vim
+      git
     ];
 
   # Enable Zsh
@@ -49,15 +50,15 @@
       };
     };
 
-  # Enable git
-    programs.git = {
-      enable = true;
-      config = {
-      	user.name = "Adity-shivam";
-      	user.email = "adishivam1507@gmail.com";
-      	init.defaultBranch = "main";
-      };
-    };
+
+
+
+
+
+
+
+
+
 
   # Enable Web Browser
     programs.firefox = {

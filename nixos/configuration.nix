@@ -50,22 +50,12 @@
       };
     };
 
-
-
-
-
-
-
-
-
-
-
-  # Enable Web Browser
-    programs.firefox = {
-      enable = true;
-      policies.Homepage.StartPage = "https://nixos.org";
-      policies.DisableTelemetry = true;
-    };
+###  # Enable Web Browser system-wide
+###    programs.firefox = {
+###      enable = true;
+###      policies.Homepage.StartPage = "https://nixos.org";
+###      policies.DisableTelemetry = true;
+###    };
 
   # Enable neovim
     programs.neovim = {

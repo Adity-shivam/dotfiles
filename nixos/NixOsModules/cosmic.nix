@@ -5,7 +5,7 @@
     services.desktopManager.cosmic.enable = true;
     services.desktopManager.cosmic.xwayland.enable = true;
     services.desktopManager.cosmic.showExcludedPkgsWarning = true;  
-    environment.cosmic.excludePackages = [ ];  
+    environment.cosmic.excludePackages = [ cosmic-reader ];  
 
   # Enable Login Manager
     # services.displayManager.gdm.enable = true;
@@ -24,6 +24,6 @@
       # snapshot
       # gnome-sound-recorder
       papers    
-
+      eog
     ];
 }

@@ -3,7 +3,7 @@
   # Enable vim
   programs.vim = {
     enable = true;
-    defaultEditor = true;
+    defaultEditor = false;
 
     plugins = [ pkgs.vimPlugins.nerdtree pkgs.vimPlugins.nerdtree-git-plugin ];
 

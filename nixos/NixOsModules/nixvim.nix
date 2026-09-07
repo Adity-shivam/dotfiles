@@ -4,6 +4,10 @@
   # Enable NixVim
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
+    nixpkgs.useGlobalPackages = true;
+
+    vimdiffAlias = true;
     viAlias = true;
     vimAlias = true;
 

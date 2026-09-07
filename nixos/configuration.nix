@@ -57,19 +57,13 @@
 ###      policies.DisableTelemetry = true;
 ###    };
 
-  # Enable neovim
-    programs.neovim = {
-      enable = true;
-      defaultEditor = false;
-
-      # extraPackages = [
-      #
-      # ];
-    };
 
   # Enable CUPS to print documents
-    services.printing.enable = true;
-
+  services.printing = { 
+    enable = true;
+    drivers = [ pkgs.gutenprint ];
+  };
+  
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

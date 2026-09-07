@@ -19,7 +19,7 @@
   # environment.
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -36,18 +36,18 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.xournalpp
-    pkgs.rnote
-    pkgs.obsidian
-    pkgs.arduino-ide
-    pkgs.zed-editor
-    pkgs.kicad
-    pkgs.freecad
-    pkgs.blender
-    pkgs.fritzing
-    pkgs.logisim
-    pkgs.winboat    
-    pkgs.gcc
+    xournalpp
+    rnote
+    obsidian
+    arduino-ide
+    zed-editor
+    kicad
+    freecad
+    blender
+    fritzing
+    logisim
+    winboat    
+    gcc
       
     inputs.zen-browser.packages.x86_64-linux.default
   ];
@@ -85,7 +85,8 @@
       mousefocus = true;
       copyindent = true;
      
-      undofile = false;
+      # undofile = false;
+      # undodir = [ "~/.vim/undo" ];
       ignorecase = true;
       smartcase = true;
       modeline = false;
@@ -96,6 +97,16 @@
     extraConfig = builtins.readFile ./EmbeddedDots/vimrc;
 
   };
+
+  # Enable neovim
+    programs.neovim = {
+      enable = true;
+      defaultEditor = false;
+
+      # extraPackages = [
+      #
+      # ];
+    };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

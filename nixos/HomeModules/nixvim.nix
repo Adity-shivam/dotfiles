@@ -3,13 +3,14 @@
   programs.nixvim = {
     enable = true;
     viAlias = true;
-    colorschemes.gruvbox.enable = true;
+    vimAlias = true;
 
-    options = {
+    colorschemes.rose-pine.enable = true;
+    
+    opts = {
       number = true;
       relativenumber = true;
     };
-
   };
   
 

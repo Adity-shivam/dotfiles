@@ -11,8 +11,8 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
         cl = "clear";
-      	# v = "nvim";
-      	v = "vim";
+      	v = "nvim";
+      	# v = "vim";
       };
     };
 

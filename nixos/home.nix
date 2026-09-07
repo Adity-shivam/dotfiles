@@ -98,15 +98,19 @@
 
   };
 
-  # Enable neovim
-    programs.neovim = {
-      enable = true;
-      defaultEditor = false;
+# Enable NixVim
+  programs.nixvim.enable = true;
 
-      # extraPackages = [
-      #
-      # ];
-    };
+
+###  # Enable neovim
+###    programs.neovim = {
+###      enable = true;
+###      defaultEditor = false;
+### 
+###      # extraPackages = [
+###      #
+###      # ];
+###    };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

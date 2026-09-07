@@ -19,6 +19,9 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # import inputs.nixvim.homeModules.nixvim 
+    # import inputs.nixvim.nixosModules.nixvim  
+
 
   };
 
@@ -31,6 +34,7 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.nixvim.homeModules.nixvim
       ];
     };
   };

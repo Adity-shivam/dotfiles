@@ -1,102 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  imports = [ ./HomeModules ];
+
   home.username = "adi";
   home.homeDirectory = "/home/adi";
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "26.05"; # Please read the comment before changing.
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
-  home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-    xournalpp
-    rnote
-    obsidian
-    arduino-ide
-    zed-editor
-    kicad
-    freecad
-    blender
-    fritzing
-    logisim
-    winboat    
-    gcc
-      
-    inputs.zen-browser.packages.x86_64-linux.default
-  ];
-
-  # Enable git
-  programs.git = {
-    enable = true;
-    ignores = [ "*.un~" "*.swp" ];
-    # hooks = { pre-commit = ./pre-commit-script; };
-
-    settings = {
-    	user.name = "Adity-shivam";
-    	user.email = "adishivam1507@gmail.com";
-    	init.defaultBranch = "main";
-    };
-  };
-
-  # Enable vim
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-
-    plugins = [ pkgs.vimPlugins.nerdtree pkgs.vimPlugins.nerdtree-git-plugin ];
-
-    settings = {
-      
-      # background = "dark";
-      number = true;
-      relativenumber = true;
-      expandtab = true;
-      tabstop = 2;
-      shiftwidth = 2;
-     
-      mouse = "c";
-      mousefocus = true;
-      copyindent = true;
-     
-      # undofile = false;
-      # undodir = [ "~/.vim/undo" ];
-      ignorecase = true;
-      smartcase = true;
-      modeline = false;
-      history = 100;
-     
-      hidden = true;
-    };
-    extraConfig = builtins.readFile ./EmbeddedDots/vimrc;
-
-  };
+  home.stateVersion = "26.05"; # Do not change, keep same as initial version
 
 ###  # Enable neovim
 ###    programs.neovim = {

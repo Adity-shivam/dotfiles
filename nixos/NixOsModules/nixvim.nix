@@ -1,6 +1,6 @@
 {
   # Enable NixVim
-  programs.nixvim. = {
+  programs.nixvim = {
     enable = true;
     viAlias = true;
     colorschemes.gruvbox.enable = true;

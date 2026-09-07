@@ -1,3 +1,5 @@
+{ inputs , pkgs,  ... }:
+
 {
   # Enable NixVim
   programs.nixvim = {

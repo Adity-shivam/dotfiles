@@ -15,5 +15,7 @@
     ./packages.nix
     ./zram.nix
     ./fstrim.nix
+    ./nixvim.nix
+    # ./nvf.nix
   ];
 }

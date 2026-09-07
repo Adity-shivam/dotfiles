@@ -98,10 +98,6 @@
 
   };
 
-# Enable NixVim
-  programs.nixvim.enable = true;
-
-
 ###  # Enable neovim
 ###    programs.neovim = {
 ###      enable = true;

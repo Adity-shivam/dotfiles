@@ -17,47 +17,6 @@
     "flakes"
   ];
 
-  networking.hostName = "Nix-Chan"; # Define your hostname.
- 
-  # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-    # nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-    environment.systemPackages = with pkgs; [
-      fastfetch
-      wget
-      fzf
-      btop
-      vim
-      git
-    ];
-
-  # Enable Zsh
-    environment.shells = with pkgs; [ bash zsh ];
-    users.defaultUserShell = pkgs.zsh;
-
-    programs.zsh = {
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      shellAliases = {
-        cl = "clear";
-      	# v = "nvim";
-      	v = "vim";
-      };
-    };
-
-###  # Enable Web Browser system-wide
-###    programs.firefox = {
-###      enable = true;
-###      policies.Homepage.StartPage = "https://nixos.org";
-###      policies.DisableTelemetry = true;
-###    };
-
-
   # Enable CUPS to print documents
   services.printing = { 
     enable = true;

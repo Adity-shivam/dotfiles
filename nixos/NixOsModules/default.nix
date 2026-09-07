@@ -12,5 +12,8 @@
     ./nix-helper.nix
     ./time-zone.nix
     ./kb-layout.nix
+    ./packages.nix
+    ./zram.nix
+    ./fstrim.nix
   ];
 }

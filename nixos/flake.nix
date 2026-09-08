@@ -20,6 +20,11 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -32,6 +37,7 @@
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.nixvim.nixosModules.nixvim
+        inputs.stylix.nixosModules.stylix
       ];
     };
   };

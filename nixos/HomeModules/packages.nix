@@ -32,7 +32,10 @@
     logisim
     winboat    
     gcc
-      
+    
+    kitty
+
+
     inputs.zen-browser.packages.x86_64-linux.default
   ];
 

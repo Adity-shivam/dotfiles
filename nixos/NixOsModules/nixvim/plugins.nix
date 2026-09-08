@@ -13,8 +13,8 @@ in
       # autoLoad = true;
       callSetup = true;
       settings = {
-          layout = [
-            {
+        layout = [
+          {
               type = "padding";
               val = 2;
             }

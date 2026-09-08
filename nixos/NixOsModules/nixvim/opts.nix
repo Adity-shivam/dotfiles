@@ -28,7 +28,6 @@
     hlsearch = true;
     
     wildmenu = true;
-#   ##syntax on 
     lazyredraw = true;
     showmatch = true;
     
@@ -47,6 +46,18 @@
     foldmethod = "indent";
     foldlevelstart = 10;
     foldnestmax = 10;
+
+
+# cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
+# cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
+# cabbrev <expr> Wqa getcmdtype() == ':' && getcmdline() ==# 'Wqa' ? 'wqa' : 'Wqa'
+# cabbrev <expr> WQ getcmdtype() == ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
+# cabbrev <expr> WQa getcmdtype() == ':' && getcmdline() ==# 'WQa' ? 'wqa' : 'WQa'
+# cabbrev <expr> WQA getcmdtype() == ':' && getcmdline() ==# 'WQA' ? 'wqa' : 'WQA'
+#
+# cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
+# cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
+# cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
 
 
 

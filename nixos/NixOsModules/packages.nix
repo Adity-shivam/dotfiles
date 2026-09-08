@@ -18,12 +18,23 @@
 
     fonts.packages = with pkgs; [
       jetbrains-mono
-#       noto-fonts
-#       noto-fonts-emoji
-#       twemoji-color-font
-#       font-awesome
-#       powerline-fonts
-#       powerline-symbols
+      # noto-fonts
+      # noto-fonts-color-emoji
+      # twemoji-color-font
+      # font-awesome
+      # powerline-fonts
+      # powerline-symbols
+      nerd-fonts.iosevka
+      nerd-fonts.fira-code
+      nerd-fonts.zed-mono
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.iosevka-term
+      nerd-fonts.comic-shanns-mono
+      nerd-fonts.liberation
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.daddy-time-mono
+      nerd-fonts.dejavu-sans-mono
+      
   ];
 
 ###  # Enable Web Browser system-wide

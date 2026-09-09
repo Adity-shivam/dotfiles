@@ -14,6 +14,7 @@
       btop
       vim
       git
+      ripgrep
     ];
 
     fonts.packages = with pkgs; [

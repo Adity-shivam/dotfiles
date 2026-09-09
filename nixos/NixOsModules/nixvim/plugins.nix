@@ -83,8 +83,8 @@ in
         enabled_file_types = [
           "markdown"
           "text"
-          #"gitcommit"
-          #"scratch"
+          # "gitcommit"
+          # "scratch"
         ];
         nested_checkboxes = 0; 
 
@@ -93,6 +93,7 @@ in
 
     # clangd-extensions.enable = true;
     # cmp | blink | coq
+    # comform
     # comfy-line-number
     # comment vs commentary
     # TODO comments
@@ -122,7 +123,7 @@ in
     # yanky
     # gitsigns
     
-
+    
     treesitter = {
       enable = true;
       highlight.enable = true;
@@ -137,7 +138,9 @@ in
       enable = true;
       keymaps = {
         "<leader>fg" = "live_grep";
-
+        "<leader>fh" = "help_tags";
+        "<leader>ff" = "find_files";
+        "<leader>fb" = "builtin";
       };
     };
 
@@ -205,10 +208,12 @@ in
       
     neo-tree = {
       enable = true;
-  
+      
+
       settings = {
         close_if_last_window = true;
         filesystem = {
+          window.mappings = { "\\" = "close_window"; };
           follow_current_file = {
             enabled = true;
             leave_dirs_open = true;
@@ -266,6 +271,21 @@ in
         hide_target_hack = false;
         stiffness = 0.8;
         trailing_stiffness = 0.5;
+      };
+    };
+    
+    # gitsign or gitgutter
+    gitsigns = {
+      enable = true;
+      settings = {
+        signs = {
+          add.text = "+";
+          change.text = "~";
+          delete.text = "_";
+          topdelete.text = "‾";
+          changedelete.text = "~";
+          untracked.text = "•"; 
+        };
       };
     };
 

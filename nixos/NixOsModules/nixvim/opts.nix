@@ -1,4 +1,7 @@
 {
+  programs.nixvim.globals = {
+    have_nerd_font = true;
+  };
   programs.nixvim.opts = {
 
     # nocompatible = true;
@@ -36,31 +39,24 @@
    
     breakindent = true;
     scrolloff = 10;
+    signcolumn = "yes";
   
-    conceallevel = 1;
-    showmode = true;
- 
-#   ## nnoremap <Esc> <cmd>nohlsearch<CR>
+    updatetime = 250;
+    timeoutlen = 300;
+    inccommand = "split";
+    confirm = true;
 
+    conceallevel = 1;
+    showmode = false;
+ 
     foldenable = true;
     foldmethod = "indent";
     foldlevelstart = 10;
     foldnestmax = 10;
 
-
-# cabbrev <expr> W getcmdtype() == ':' && getcmdline() ==# 'W' ? 'w' : 'W'
-# cabbrev <expr> Wq getcmdtype() == ':' && getcmdline() ==# 'Wq' ? 'wq' : 'Wq'
-# cabbrev <expr> Wqa getcmdtype() == ':' && getcmdline() ==# 'Wqa' ? 'wqa' : 'Wqa'
-# cabbrev <expr> WQ getcmdtype() == ':' && getcmdline() ==# 'WQ' ? 'wq' : 'WQ'
-# cabbrev <expr> WQa getcmdtype() == ':' && getcmdline() ==# 'WQa' ? 'wqa' : 'WQa'
-# cabbrev <expr> WQA getcmdtype() == ':' && getcmdline() ==# 'WQA' ? 'wqa' : 'WQA'
-#
-# cabbrev <expr> Q getcmdtype() == ':' && getcmdline() ==# 'Q' ? 'q' : 'Q'
-# cabbrev <expr> Qa getcmdtype() == ':' && getcmdline() ==# 'Qa' ? 'qa' : 'Qa'
-# cabbrev <expr> QA getcmdtype() == ':' && getcmdline() ==# 'QA' ? 'qa' : 'QA'
-
-
-
   };
+  # thicken neotree seperator and color it
+  programs.nixvim.opts.fillchars = { vert = "┃"; };
+  programs.nixvim.extraConfigVim = "highlight WinSeparator guifg=#31748f guibg=NONE";
 }
 

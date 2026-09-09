@@ -18,8 +18,8 @@
     vimAlias = true;
 
     colorschemes.rose-pine.enable = true;
+
     
- 
 
   };
 }

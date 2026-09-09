@@ -56,7 +56,7 @@ in
                     position = "center";
                   };
                   type = "button";
-                  val = " Quit Neovim";
+                  val = "⏻ Quit Neovim";
                 }
               ];
             }
@@ -91,39 +91,33 @@ in
       };
     };
 
-    # clangd-extensions.enable = true;
+    # lsp / luasnip
     # cmp | blink | coq
+    # clangd-extensions.enable = true;
+    # nix
     # comform
+    # quicker
+    # dap debug 
+    # lint
     # comfy-line-number
     # comment vs commentary
     # TODO comments
-    # dap debug 
     # intelli indent
-    # lint
-    # lsp / luasnip
     # mini | autopair | autoclose
     # snacks
     # multi cursors
     # neoclip
     # neorg
-    # nerdy
-    # nix
     # ufo | fold
     # persistnace | tmux
-    # quicker
-    # smart colorcolumn
-    # transparent
-    # twiligh
     # undotree
     # visual whitespace
-    # webdev icons
     # whichkey
     # whitespace (remove trailing spaces)
-    # wilder
     # yanky
-    # gitsigns
     
-    
+
+
     treesitter = {
       enable = true;
       highlight.enable = true;
@@ -186,7 +180,6 @@ in
         };
       };
     };
-    
     # indent-tools = {
     #   enable = true;
     # };
@@ -289,5 +282,89 @@ in
       };
     };
 
+    nerdy = {
+      enable = true;
+      enableTelescope = true;
+      callSetup = true;
+    };
+
+    # wilder = {
+    #   enable = true;
+    #   options = {
+    #     renderer = lib.nixvim.mkRaw ''
+    #     wilder.popupmenu_renderer(
+    #       wilder.popupmenu_border_theme({
+    #         highlights = { border = 'Normal' },
+    #         border = 'rounded',
+    #         -- pumblend = 20,
+    #       })
+    #     )
+    #   '';
+    #   };
+    #
+    #   settings = {
+    #     modes = [
+    #       ":"
+    #       "/"
+    #       "?"
+    #     ];
+    #     next_key = "<Tab>";
+    #     previous_key = "<S-Tab>";
+    #   };
+    # };
+
+    # twilight.enable = true;
+    smartcolumn = {
+      enable = true;
+      settings = {
+        colorcolumn = "80";
+        custom_colorcolumn = {
+          go = [
+            "100"
+            "130"
+          ];
+          java = [
+            "100"
+            "140"
+          ];
+          nix = [
+            "100"
+            "120"
+          ];
+          rust = [
+            "80"
+            "100"
+          ];
+          cpp = [
+            "80"
+            "100"
+          ];
+          c = [
+            "80"
+            "100"
+          ];
+        };
+        disabled_filetypes = [
+          "checkhealth"
+          "help"
+          "lspinfo"
+          "markdown"
+          "neo-tree"
+          "noice"
+          "text"
+        ];
+        scope = "window";
+      };
+
+    };
+  
+    transparent.enable = true;
+    
+    neoclip = {
+      enable = true;
+    };
+
   };
 }
+
+

@@ -3,6 +3,14 @@
 {
   programs.nixvim.globals.mapleader = " ";
   programs.nixvim.globals.maplocalleader = " ";
+  
+  programs.nixvim.userCommands = {
+    Nerdy = {
+      command = "Telescope nerdy";
+      desc = "Open Nerdy through Telescope";
+    };
+  };
+
 
   programs.nixvim.keymaps = [
     {

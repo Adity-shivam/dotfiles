@@ -30,7 +30,6 @@
     incsearch = true;
     hlsearch = true;
     
-    wildmenu = true;
     lazyredraw = true;
     showmatch = true;
     
@@ -40,7 +39,8 @@
     breakindent = true;
     scrolloff = 10;
     signcolumn = "yes";
-  
+    cursorline = true;
+
     updatetime = 250;
     timeoutlen = 300;
     inccommand = "split";

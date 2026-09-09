@@ -3,21 +3,24 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
-    ./gaming.nix
     ./cosmic.nix
+    ./fstrim.nix
+    ./gaming.nix
+    # ./garbage-collector.nix
+    ./kb-layout.nix
     ./network.nix
+    ./nix-helper.nix
+    ./nixvim/nixvim.nix
+    # ./nvf.nix
+    ./packages.nix
+    # ./printing.nix
+    # ./stylix.nix
+    ./time-zone.nix
     ./users.nix
     ./virtualisation.nix
     ./wacom.nix
-    ./nix-helper.nix
-    ./time-zone.nix
-    ./kb-layout.nix
-    ./packages.nix
-    ./zram.nix
-    ./fstrim.nix
-    ./nixvim/nixvim.nix
-    # ./nvf.nix
-    # ./stylix.nix
     ./zoxide.nix
+    ./zram.nix
+    ./zsh.nix
   ];
 }

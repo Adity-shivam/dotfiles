@@ -1,9 +1,9 @@
 {
   programs.zoxide = {
     enable = true;
-    flags = [];
+    flags = [ "--cmd cd" ];
     
     enableZshIntegration = true;
-    # enableBashIntegration = true;
+    enableBashIntegration = true;
   };
 }

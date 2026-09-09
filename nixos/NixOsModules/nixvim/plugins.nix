@@ -112,9 +112,7 @@ in
     # persistnace | tmux
     # undotree
     # visual whitespace
-    # whichkey
     # whitespace (remove trailing spaces)
-    # yanky
     
 
 
@@ -226,7 +224,8 @@ in
         timeout = 5;  
       };
     };
-
+    
+    notify.enable = true;
     timerly = {
       enable = true;
       settings = {
@@ -234,6 +233,7 @@ in
           30
           10
         ];
+        position = "bottom-right";
       };
     };
     
@@ -250,7 +250,20 @@ in
     };
     tiny-glimmer = {
       enable = true;
-      settings = {};
+      settings = {
+        overwrite.paste.default_animation = "fade";
+        animations = {
+          fade = {
+            chars_for_max_duration = 10;
+            max_duration = 400;
+            min_duration = 300;
+            easing = "outQuad";
+            from_color = "Search";
+            to_color = "Normal";
+          };
+        };
+        refresh_interval_ms = 5;
+      };
     };
     tiny-inline-diagnostic = {
       enable = true;
@@ -259,12 +272,12 @@ in
 
     smear-cursor = {
       enable = true;
-      settings = {
-        distance_stop_animating = 0.5;
-        hide_target_hack = false;
-        stiffness = 0.8;
-        trailing_stiffness = 0.5;
-      };
+      # settings = {
+      #   distance_stop_animating = 0.5;
+      #   hide_target_hack = false;
+      #   stiffness = 0.8;
+      #   trailing_stiffness = 0.5;
+      # };
     };
     
     # gitsign or gitgutter
@@ -313,7 +326,6 @@ in
     #   };
     # };
 
-    # twilight.enable = true;
     smartcolumn = {
       enable = true;
       settings = {
@@ -358,8 +370,18 @@ in
 
     };
   
+    comfy-line-numbers = true;
+
+    # twilight.enable = true;
+    # which-key.enable = true;
     # transparent.enable = true;
+    
+    # Neoclip or Yanky
     neoclip.enable = true;
+    # yanky = {
+    #   enable = true;
+    #   enableTelescope = true;
+    # };
 
     todo-comments = {
       enable = true;
@@ -444,6 +466,8 @@ in
         };
       };
     };
+
+      
 
   };
 }

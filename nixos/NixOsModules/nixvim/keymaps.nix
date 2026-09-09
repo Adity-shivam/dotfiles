@@ -9,6 +9,11 @@
       command = "Telescope nerdy";
       desc = "Open Nerdy through Telescope";
     };
+    Todo = {
+      command = "TodoTelescope";
+      desc = "search TODOs through Telescope";
+    };
+
   };
 
 

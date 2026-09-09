@@ -17,6 +17,7 @@
     ./fstrim.nix
     ./nixvim/nixvim.nix
     # ./nvf.nix
-    ./stylix.nix
+    # ./stylix.nix
+    ./zoxide.nix
   ];
 }

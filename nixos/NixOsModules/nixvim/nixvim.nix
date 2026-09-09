@@ -5,7 +5,7 @@
   imports = [ 
     ./opts.nix
     ./plugins.nix
-    ./keybinds.nix
+    ./keymaps.nix
   ];
 	
   # Enable NixVim

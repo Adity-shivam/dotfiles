@@ -14,7 +14,7 @@
     expandtab = true;
     shiftwidth = 2;
     
-    # mouse = "c";
+    mouse = "c";
     mousefocus = true;
     copyindent = true;
    

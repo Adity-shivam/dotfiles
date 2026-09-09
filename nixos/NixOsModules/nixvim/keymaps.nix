@@ -25,6 +25,19 @@
 
     {
       mode = "n";
+      key = "<leader>\"";
+      action = "<cmd>Telescope neoclip<CR>";
+      options.desc = "open neoclip";
+    }    
+    {
+      mode = "n";
+      key = "<leader>+";
+      action = "<cmd>Telescope neoclip plus<CR>";
+      options.desc = "open neoclip to system clipboard";
+    }
+
+    {
+      mode = "n";
       key = "<Esc>";
       action = "<cmd>nohlsearch<CR>";
       options = {

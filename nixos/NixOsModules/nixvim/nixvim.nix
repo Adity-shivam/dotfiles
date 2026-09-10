@@ -5,6 +5,7 @@
   imports = [ 
     ./opts.nix
     ./plugins.nix
+    ./lsp.nix
     ./keymaps.nix
   ];
 	

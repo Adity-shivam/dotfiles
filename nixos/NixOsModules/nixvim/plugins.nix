@@ -91,31 +91,7 @@ in
       };
     };
 
-    # TODO: add plugins
-
-    # lsp / luasnip
-    # cmp | blink | coq
-    # clangd-extensions.enable = true;
-    # nix
-    # comform
-    # quicker
-    # dap debug 
-    # lint
-    # comfy-line-number
-    # comment vs commentary
-    # intelli indent
-    # mini | autopair | autoclose
-    # snacks
-    # multi cursors
-    # neorg
-    # ufo | fold
-    # persistnace | tmux
-    # undotree
-    # visual whitespace
-    # whitespace (remove trailing spaces)
-    
-
-
+    # Web browser grammer plugin
     treesitter = {
       enable = true;
       highlight.enable = true;
@@ -370,11 +346,11 @@ in
 
     };
   
-    comfy-line-numbers = true;
-
+    # comfy-line-numbers.enable = true;
     # twilight.enable = true;
     # which-key.enable = true;
     # transparent.enable = true;
+    # multicursor.enable = true;
     
     # Neoclip or Yanky
     neoclip.enable = true;
@@ -467,9 +443,19 @@ in
       };
     };
 
-      
+    intellitab.enable = true;  
 
+    # Visible Whitespaces 
+    # whitespace.enable = true;     
+    # visual-whitespace.enable = true;
+
+    # undotree.enable = true;   
+  
+    # Comment
+    commentary.enable = true;
+    # comment = {
+    #   enable = true;
+    # };
+    
   };
 }
-
-

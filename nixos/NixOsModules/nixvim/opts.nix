@@ -17,7 +17,7 @@
     mouse = "c";
     mousefocus = true;
     copyindent = true;
-   
+    
     # undofile = false;
     # undodir = [ "~/.vim/undo" ];
     ignorecase = true;
@@ -42,7 +42,7 @@
     cursorline = true;
 
     updatetime = 250;
-    timeoutlen = 300;
+    timeoutlen = 800;
     inccommand = "split";
     confirm = true;
 

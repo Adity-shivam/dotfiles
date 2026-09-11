@@ -7,6 +7,7 @@
     ./plugins.nix
     ./lsp.nix
     ./keymaps.nix
+    ./autocmd.nix
   ];
 	
   # Enable NixVim

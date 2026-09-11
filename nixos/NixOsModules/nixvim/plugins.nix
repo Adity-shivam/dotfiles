@@ -91,17 +91,6 @@ in
       };
     };
 
-    # Web browser grammer plugin
-    treesitter = {
-      enable = true;
-      highlight.enable = true;
-      indent.enable = true;
-      folding.enable = true;
-
-      # install grammer packages
-
-    };
-
     telescope = {
       enable = true;
       keymaps = {
@@ -158,6 +147,8 @@ in
     #   enable = true;
     # };
     
+
+    # competiTest.enable = true;
     # leetcode = {
     #   enable = true;
     #   settings = {
@@ -457,5 +448,7 @@ in
     #   enable = true;
     # };
     
+    toggler.enable = true;
+
   };
 }

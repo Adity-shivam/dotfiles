@@ -1,13 +1,13 @@
 { pkgs, inputs, ... }:
 
-let 
+let
   lib = inputs.nixvim.lib;
 in
 
 {
   programs.nixvim.plugins = {
     bufferline.enable = true;
-   
+
     alpha = {
       enable = true;
       # autoLoad = true;
@@ -15,64 +15,64 @@ in
       settings = {
         layout = [
           {
-              type = "padding";
-              val = 2;
-            }
-            {
-              opts = {
-                hl = "Type";
-                position = "center";
-              };
-              type = "text";
-              val = [
-                "███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
-                "████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║"
-                "██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║"
-                "██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
-                "██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
-                "╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
-              ];
-            }
-            {
-              type = "padding";
-              val = 2;
-            }
-            {
-              type = "group";
-              val = [
-                {
-                  on_press = lib.nixvim.mkRaw "function() vim.cmd[[ene]] end";
-                  opts = {
-                    shortcut = "n";
-                    position = "center";
-                  };
-                  type = "button";
-                  val = "  New file";
-                }
-                {
-                  on_press = lib.nixvim.mkRaw "function() vim.cmd[[qa]] end";
-                  opts = {
-                    shortcut = "q";
-                    position = "center";
-                  };
-                  type = "button";
-                  val = "⏻ Quit Neovim";
-                }
-              ];
-            }
-            {
-              type = "padding";
-              val = 2;
-            }
-            {
-              opts = {
-                hl = "Keyword";
-                position = "center";
-              };
-              type = "text";
-              val = "Inspiring quote here.";
-            }
-          ];
+            type = "padding";
+            val = 2;
+          }
+          {
+            opts = {
+              hl = "Type";
+              position = "center";
+            };
+            type = "text";
+            val = [
+              "███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
+              "████╗  ██║██║╚██╗██╔╝██║   ██║██║████╗ ████║"
+              "██╔██╗ ██║██║ ╚███╔╝ ██║   ██║██║██╔████╔██║"
+              "██║╚██╗██║██║ ██╔██╗ ╚██╗ ██╔╝██║██║╚██╔╝██║"
+              "██║ ╚████║██║██╔╝ ██╗ ╚████╔╝ ██║██║ ╚═╝ ██║"
+              "╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
+            ];
+          }
+          {
+            type = "padding";
+            val = 2;
+          }
+          {
+            type = "group";
+            val = [
+              {
+                on_press = lib.nixvim.mkRaw "function() vim.cmd[[ene]] end";
+                opts = {
+                  shortcut = "n";
+                  position = "center";
+                };
+                type = "button";
+                val = "  New file";
+              }
+              {
+                on_press = lib.nixvim.mkRaw "function() vim.cmd[[qa]] end";
+                opts = {
+                  shortcut = "q";
+                  position = "center";
+                };
+                type = "button";
+                val = "⏻ Quit Neovim";
+              }
+            ];
+          }
+          {
+            type = "padding";
+            val = 2;
+          }
+          {
+            opts = {
+              hl = "Keyword";
+              position = "center";
+            };
+            type = "text";
+            val = "Inspiring quote here.";
+          }
+        ];
       };
     };
 
@@ -86,7 +86,7 @@ in
           # "gitcommit"
           # "scratch"
         ];
-        nested_checkboxes = 0; 
+        nested_checkboxes = 0;
 
       };
     };
@@ -105,7 +105,7 @@ in
     #   enable = true;
     #   enableTelescope = true;
     #   settings = {
-    #       settings = {    
+    #       settings = {
     #         save_on_toggle = true;
     #         sync_on_ui_close = false;
     #       };
@@ -146,7 +146,6 @@ in
     # indent-tools = {
     #   enable = true;
     # };
-    
 
     # competiTest.enable = true;
     # leetcode = {
@@ -158,20 +157,21 @@ in
     #       home = "~/projects/leetcode";
     #     };
     #   };
-    # };    
-  
+    # };
+
     lualine = {
       enable = true;
     };
-      
+
     neo-tree = {
       enable = true;
-      
 
       settings = {
         close_if_last_window = true;
         filesystem = {
-          window.mappings = { "\\" = "close_window"; };
+          window.mappings = {
+            "\\" = "close_window";
+          };
           follow_current_file = {
             enabled = true;
             leave_dirs_open = true;
@@ -188,10 +188,10 @@ in
         };
         maxkeys = 5;
         position = "top-right";
-        timeout = 5;  
+        timeout = 5;
       };
     };
-    
+
     notify.enable = true;
     timerly = {
       enable = true;
@@ -203,7 +203,7 @@ in
         position = "bottom-right";
       };
     };
-    
+
     web-devicons = {
       enable = true;
       settings = {
@@ -234,7 +234,7 @@ in
     };
     tiny-inline-diagnostic = {
       enable = true;
-      settings = {};
+      settings = { };
     };
 
     smear-cursor = {
@@ -246,7 +246,7 @@ in
       #   trailing_stiffness = 0.5;
       # };
     };
-    
+
     # gitsign or gitgutter
     gitsigns = {
       enable = true;
@@ -257,7 +257,7 @@ in
           delete.text = "_";
           topdelete.text = "‾";
           changedelete.text = "~";
-          untracked.text = "•"; 
+          untracked.text = "•";
         };
       };
     };
@@ -336,13 +336,13 @@ in
       };
 
     };
-  
+
     # comfy-line-numbers.enable = true;
     # twilight.enable = true;
     # which-key.enable = true;
     # transparent.enable = true;
     # multicursor.enable = true;
-    
+
     # Neoclip or Yanky
     neoclip.enable = true;
     # yanky = {
@@ -380,7 +380,7 @@ in
           "#FBBF24"
         ];
       };
-      settings.keywords ={
+      settings.keywords = {
         FIX = {
           alt = [
             "FIXME"
@@ -434,21 +434,22 @@ in
       };
     };
 
-    intellitab.enable = true;  
+    intellitab.enable = true;
 
-    # Visible Whitespaces 
-    # whitespace.enable = true;     
+    # Visible Whitespaces
+    # whitespace.enable = true;
     # visual-whitespace.enable = true;
 
-    # undotree.enable = true;   
-  
+    # undotree.enable = true;
+
     # Comment
     commentary.enable = true;
     # comment = {
     #   enable = true;
     # };
-    
+
     toggler.enable = true;
 
   };
 }
+

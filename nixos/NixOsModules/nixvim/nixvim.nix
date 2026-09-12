@@ -1,15 +1,15 @@
-{ inputs , pkgs,  ... }:
+{ inputs, pkgs, ... }:
 
 {
 
-  imports = [ 
+  imports = [
     ./opts.nix
     ./plugins.nix
     ./lsp.nix
     ./keymaps.nix
     ./autocmd.nix
   ];
-	
+
   # Enable NixVim
   programs.nixvim = {
     enable = true;
@@ -19,9 +19,14 @@
     viAlias = true;
     vimAlias = true;
 
-    colorschemes.rose-pine.enable = true;
-
-    
-
+    colorschemes = {
+      # tokyonight.enable = true;
+      # colorschemes.rosepine.enable = true;
+      nightfox = {
+        enable = true;
+        flavor = "nightfox";
+      };
+    };
   };
 }
+

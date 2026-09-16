@@ -16,8 +16,8 @@
     defaultEditor = true;
     nixpkgs.useGlobalPackages = true;
 
-    viAlias = true;
-    vimAlias = true;
+    # viAlias = true;
+    # vimAlias = true;
 
     colorschemes = {
       # tokyonight.enable = true;

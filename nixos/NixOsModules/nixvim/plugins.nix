@@ -331,6 +331,7 @@ in
           "neo-tree"
           "noice"
           "text"
+          "alpha"
         ];
         scope = "window";
       };

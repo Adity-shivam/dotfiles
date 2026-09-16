@@ -3,7 +3,10 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
-    ./cosmic.nix
+
+    # ./cosmic.nix
+    ./mango-wc.nix
+
     ./fstrim.nix
     ./gaming.nix
     # ./garbage-collector.nix
@@ -24,3 +27,4 @@
     ./zsh.nix
   ];
 }
+

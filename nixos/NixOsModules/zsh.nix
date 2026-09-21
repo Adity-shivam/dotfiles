@@ -11,8 +11,10 @@
     shellAliases = {
       cl = "clear";
     	v = "nvim";
+      .. = "cd .."
     	# v = "vim";
     };
   };
 
 }
+

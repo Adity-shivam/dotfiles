@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [ ./HomeModules ];
@@ -7,15 +12,15 @@
   home.homeDirectory = "/home/adi";
   home.stateVersion = "26.05"; # Do not change, keep same as initial version
 
-###  # Enable neovim
-###    programs.neovim = {
-###      enable = true;
-###      defaultEditor = false;
-### 
-###      # extraPackages = [
-###      #
-###      # ];
-###    };
+  ###  # Enable neovim
+  ###    programs.neovim = {
+  ###      enable = true;
+  ###      defaultEditor = false;
+  ###
+  ###      # extraPackages = [
+  ###      #
+  ###      # ];
+  ###    };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -49,9 +54,10 @@
   #  /etc/profiles/per-user/adi/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+

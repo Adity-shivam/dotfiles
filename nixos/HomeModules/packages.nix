@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... } :
+{ pkgs, inputs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];  
+  nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -30,15 +30,15 @@
     blender
     fritzing
     logisim
-    winboat    
+    winboat
     gcc
-    
+
     kitty
-  
+
     mpv
-    woomer
 
     inputs.zen-browser.packages.x86_64-linux.default
   ];
 
 }
+

@@ -4,8 +4,9 @@
     ./bluetooth.nix
     ./boot.nix
 
-    ./cosmic.nix
+    # ./cosmic.nix
     # ./mango-wc.nix
+    ./dank-material-shell.nix
 
     ./fstrim.nix
     ./gaming.nix

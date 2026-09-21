@@ -25,6 +25,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
+    
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -38,7 +44,9 @@
         inputs.home-manager.nixosModules.default
         inputs.nixvim.nixosModules.nixvim
         inputs.stylix.nixosModules.stylix
+        inputs.dms.nixosModules.dank-material-shell
       ];
     };
   };
 }
+

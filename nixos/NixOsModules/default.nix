@@ -5,13 +5,15 @@
     ./boot.nix
 
     # ./cosmic.nix
-    # ./mango-wc.nix
-    ./dank-material-shell.nix
+    ./mango-wc.nix
 
     ./fstrim.nix
     ./gaming.nix
     # ./garbage-collector.nix
     ./kb-layout.nix
+
+    ./login-manager.nix
+
     ./network.nix
     ./nix-helper.nix
     ./nixvim/nixvim.nix

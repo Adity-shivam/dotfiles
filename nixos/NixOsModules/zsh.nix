@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
-  environment.shells = with pkgs; [ bash zsh ];
-  
+  environment.shells = with pkgs; [
+    bash
+    zsh
+  ];
+
   # Enable zsh
   programs.zsh = {
     enable = true;
@@ -10,9 +13,9 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       cl = "clear";
-    	v = "nvim";
-      .. = "cd .."
-    	# v = "vim";
+      v = "nvim";
+      ".." = "cd ..";
+      # v = "vim";
     };
   };
 

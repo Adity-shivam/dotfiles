@@ -4,8 +4,8 @@
     ./bluetooth.nix
     ./boot.nix
 
-    # ./cosmic.nix
-    ./mango-wc.nix
+    ./cosmic.nix
+    # ./mango-wc.nix
 
     ./fstrim.nix
     ./gaming.nix

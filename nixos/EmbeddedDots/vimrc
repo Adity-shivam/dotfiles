@@ -1,3 +1,7 @@
+
+"" options set in 
+
+
 set nocompatible
 set softtabstop=2
 
@@ -68,5 +72,4 @@ autocmd BufEnter *
 let NERDTreeWinSize = 30
 let NERDTreeWinPos = "left"
 let NERDTreeMapToggleHidden = 'H'
-
 

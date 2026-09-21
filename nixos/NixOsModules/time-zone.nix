@@ -1,8 +1,8 @@
 {
 
-# Set your time zone.
-  time.timeZone = "Asia/Kolkata";
-  # time.timeZone = "Europe/London";
+  # Set your time zone.
+  # time.timeZone = "Asia/Kolkata";
+  time.timeZone = "Europe/London";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -19,3 +19,4 @@
     LC_TIME = "en_GB.UTF-8";
   };
 }
+

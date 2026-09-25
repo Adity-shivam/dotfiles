@@ -5,7 +5,7 @@
     ./boot.nix
 
     ./cosmic.nix
-    # ./mango-wc.nix
+    ./mango-wc.nix
 
     ./fstrim.nix
     ./gaming.nix

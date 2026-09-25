@@ -19,6 +19,7 @@
 
       extraConfig = ''
         timeout: 3
+        INTERFACE_RESOLUTION=1920x1080
         remember_last_entry: yes
         term_font_scale: 2x2
       '';

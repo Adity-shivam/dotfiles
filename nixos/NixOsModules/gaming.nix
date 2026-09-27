@@ -71,19 +71,19 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  ###  # Hybrid mode - give 2 boot entries per rebuild
-  ###
-  ###    specialisation = {
-  ###      gaming.configuration = {
-  ###
-  ###        hardware.nvidia = {
-  ###          prime.sync.enable = lib.mkForce true;
-  ###          prime.offload.enable = lib.mkForce false;
-  ###          prime.offload.enableOffloadCmd = lib.mkForce false;
-  ###
-  ###        };
-  ###      };
-  ###    };
+  # Hybrid mode - give 2 boot entries per rebuild
+
+  specialisation = {
+    gaming.configuration = {
+
+      hardware.nvidia = {
+        prime.sync.enable = lib.mkForce true;
+        prime.offload.enable = lib.mkForce false;
+        prime.offload.enableOffloadCmd = lib.mkForce false;
+
+      };
+    };
+  };
 
 }
 

@@ -1,5 +1,15 @@
 { pkgs, lib, ... }:
 
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec "$@"
+  '';
+in
+
 {
   # Enable gamemode (optimise system on demand)
   programs.gamemode.enable = true;
@@ -34,7 +44,9 @@
     # gaming utils
     mangohud
 
+    # install legacy drivers and offload cmd for legacy gpu
     linuxKernel.packages.linux_6_1.nvidia_x11_legacy390
+    nvidia-offload
   ];
 
   # Enable NVIDIA drivers (both x11 and wayland)
@@ -69,7 +81,8 @@
 
   hardware.nvidia.prime = {
     offload.enable = true;
-    offload.enableOffloadCmd = true;
+    # Use script offload cmd, since this option doesnt work with old gpus
+    offload.enableOffloadCmd = false;
 
     # integrated
     amdgpuBusId = "PCI:6:0:0";

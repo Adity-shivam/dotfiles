@@ -31,8 +31,9 @@
     fritzing
     logisim
     winboat
-    gcc
+    discord
 
+    gcc
     kitty
 
     mpv

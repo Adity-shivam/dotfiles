@@ -11,6 +11,9 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+
+    # ohMyZsh.enable = true;
+
     shellAliases = {
       cl = "clear";
       v = "nvim";

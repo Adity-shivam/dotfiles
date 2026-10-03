@@ -19,7 +19,9 @@
   # Enable Retroarch
   services.xserver.desktopManager.retroarch.enable = true;
 
-  # Enable Other launchers
+  # Allow Proprietary drivers
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.nvidia.acceptLicense = true; # Enable Other launchers
   environment.systemPackages = with pkgs; [
 
     # launchers
@@ -31,6 +33,8 @@
 
     # gaming utils
     mangohud
+
+    linuxKernel.packages.linux_6_1.nvidia_x11_legacy390
   ];
 
   # Enable NVIDIA drivers (both x11 and wayland)

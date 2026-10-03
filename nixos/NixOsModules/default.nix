@@ -11,6 +11,7 @@
     ./gaming.nix
     # ./garbage-collector.nix
     ./kb-layout.nix
+    ./kernel.nix
 
     ./login-manager.nix
 

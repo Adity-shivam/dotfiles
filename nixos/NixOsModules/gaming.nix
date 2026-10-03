@@ -35,8 +35,11 @@
 
   # Enable NVIDIA drivers (both x11 and wayland)
   services.xserver.videoDriver = [ "nvidia" ];
-  hardware.nvidia.modesetting.enable = true;
-
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+  };
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
 
@@ -47,8 +50,8 @@
 
   # Sync mode (always use dedicated)
 
-  ###    hardware.nvidia.prime = {
-  ###      sync.enable = true;
+  ###  hardware.nvidia.prime = {
+  ###    sync.enable = true;
   ###
   ###    # integrated
   ###    amdgpuBusId = "PCI:6:0:0";
@@ -56,7 +59,7 @@
   ###    # dedicated
   ###    nvidiaBusId = "PCI:1:0:0";
   ###
-  ###    };
+  ###  };
 
   # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
 
@@ -73,17 +76,17 @@
 
   # Hybrid mode - give 2 boot entries per rebuild
 
-  specialisation = {
-    gaming.configuration = {
-
-      hardware.nvidia = {
-        prime.sync.enable = lib.mkForce true;
-        prime.offload.enable = lib.mkForce false;
-        prime.offload.enableOffloadCmd = lib.mkForce false;
-
-      };
-    };
-  };
+  ###  specialisation = {
+  ###    gaming.configuration = {
+  ###
+  ###      hardware.nvidia = {
+  ###        prime.sync.enable = lib.mkForce true;
+  ###        prime.offload.enable = lib.mkForce false;
+  ###        prime.offload.enableOffloadCmd = lib.mkForce false;
+  ###
+  ###      };
+  ###    };
+  ###  };
 
 }
 

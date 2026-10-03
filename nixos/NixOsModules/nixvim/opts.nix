@@ -70,7 +70,5 @@
   };
   programs.nixvim.extraConfigVim = "highlight WinSeparator guifg=#31748f guibg=NONE";
 
-  # Enable ShowkeysToggle on startup
-  programs.nixvim.extraConfigVim = "ShowkeysToggle";
 }
 

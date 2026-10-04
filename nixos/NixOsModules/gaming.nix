@@ -16,7 +16,7 @@ let
 in
 
 {
-  imports = [ ./nvidia/nv.nix ];
+  imports = [ ./nvidia/default.nix ];
 
   # Enable gamemode (optimise system on demand)
   programs.gamemode.enable = true;
@@ -38,7 +38,9 @@ in
 
   # Allow Proprietary drivers
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.nvidia.acceptLicense = true; # Enable Other launchers
+  nixpkgs.config.nvidia.acceptLicense = true;
+
+  # Enable Other launchers
   environment.systemPackages = with pkgs; [
 
     # launchers
@@ -55,6 +57,7 @@ in
     # nvidia-offload
   ];
 
+  # From nvidia module
   drivers.nvidia.enable = true;
 
   ######################  # Enable NVIDIA drivers (both x11 and wayland)
@@ -86,19 +89,19 @@ in
   ######################  ###
   ######################  ###  };
   ######################
-  ######################  # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
-  ######################
-  ######################  hardware.nvidia.prime = {
-  ######################    offload.enable = true;
-  ######################    # Use script offload cmd, since this option doesnt work with old gpus
-  ######################    offload.enableOffloadCmd = false;
-  ######################
-  ######################    # integrated
-  ######################    amdgpuBusId = "PCI:6:0:0";
-  ######################
-  ######################    # dedicated
-  ######################    nvidiaBusId = "PCI:1:0:0";
-  ######################  };
+  # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
+
+  hardware.nvidia.prime = {
+    offload.enable = true;
+    # Use script offload cmd, since this option doesnt work with old gpus
+    offload.enableOffloadCmd = true;
+
+    # integrated
+    amdgpuBusId = "PCI:6:0:0";
+
+    # dedicated
+    nvidiaBusId = "PCI:1:0:0";
+  };
   ######################
   ######################  # Hybrid mode - give 2 boot entries per rebuild
   ######################

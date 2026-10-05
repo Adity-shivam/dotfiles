@@ -12,9 +12,5 @@
   boot.initrd.unl0kr.allowVendorDrivers = true;
 
   # kdePackages.wacomtablet # add to packages
-
-  # start systemd --user enable opentabletdriver.service
-  # systemd.user.services.opentabletdriver.Install.WantedBy = [ "default.target" ];
-
 }
 

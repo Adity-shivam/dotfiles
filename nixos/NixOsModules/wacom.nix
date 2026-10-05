@@ -1,13 +1,20 @@
+{ pkgs, ... }:
+
 {
   # Enable Wacom Tablet
-    # services.xserver.wacom.enable = true;
-    hardware.opentabletdriver.enable = true;
-    hardware.opentabletdriver.daemon.enable = true; 
+  # services.xserver.wacom.enable = true;
+  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.daemon.enable = true;
 
+  systemd.user.services.otd-daemon.enable = true;
+  systemd.user.services.opentabletdriver.enable = true;
   # Enable extra vendor Drivers
-    boot.initrd.unl0kr.allowVendorDrivers = true;
-      
+  boot.initrd.unl0kr.allowVendorDrivers = true;
 
   # kdePackages.wacomtablet # add to packages
+
+  # start systemd --user enable opentabletdriver.service
+  # systemd.user.services.opentabletdriver.Install.WantedBy = [ "default.target" ];
+
 }
 

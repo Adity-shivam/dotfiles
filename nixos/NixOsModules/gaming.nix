@@ -5,19 +5,7 @@
   ...
 }:
 
-let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
-  '';
-in
-
 {
-  imports = [ ./nvidia/default.nix ];
-
   # Enable gamemode (optimise system on demand)
   programs.gamemode.enable = true;
 
@@ -40,7 +28,6 @@ in
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 
-  # Enable Other launchers
   environment.systemPackages = with pkgs; [
 
     # launchers
@@ -53,42 +40,64 @@ in
     # gaming utils
     mangohud
 
-    # install legacy drivers and offload cmd for legacy gpu
-    # nvidia-offload
+    # install system Packages
+    egl-wayland
+    symbola
+    vulkan-loader
+    vulkan-tools
+    vulkan-validation-layers
   ];
 
-  # From nvidia module
-  drivers.nvidia.enable = true;
+  # Enable NVIDIA drivers (both x11 and wayland)
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-  ######################  # Enable NVIDIA drivers (both x11 and wayland)
-  ######################  services.xserver.videoDriver = [ "nvidia" ];
-  ######################  hardware.nvidia = {
-  ######################    modesetting.enable = true;
-  ######################    open = false;
-  ######################    nvidiaSettings = true;
-  ######################    package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-  ######################  };
-  ######################  hardware.graphics.enable = true;
-  ######################  hardware.graphics.enable32Bit = true;
-  ######################
-  ######################  # Nvidia Optimus Prime for dual graphics
-  ######################  # uncomment Sync and comment other 2 for Pure dedicated graphics
-  ######################  # comment Sync and hybrid for Pure offload mode
-  ######################  # comment sync and uncomment other 2 for 2 boot entry rebuilds
-  ######################
-  ######################  # Sync mode (always use dedicated)
-  ######################
-  ######################  ###  hardware.nvidia.prime = {
-  ######################  ###    sync.enable = true;
-  ######################  ###
-  ######################  ###    # integrated
-  ######################  ###    amdgpuBusId = "PCI:6:0:0";
-  ######################  ###
-  ######################  ###    # dedicated
-  ######################  ###    nvidiaBusId = "PCI:1:0:0";
-  ######################  ###
-  ######################  ###  };
-  ######################
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaPersistenced = true;
+    nvidiaSettings = true;
+    open = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+
+    extraPackages = with pkgs; [
+      intel-media-driver # Intel iGPU accel
+      intel-vaapi-driver # Intel VA-API
+      libva
+      libva-utils
+      libva-vdpau-driver
+      libvdpau
+      libvdpau-va-gl
+      nvidia-vaapi-driver
+      vdpauinfo
+    ];
+  };
+
+  # Nvidia Optimus Prime for dual graphics
+  # uncomment Sync and comment other 2 for Pure dedicated graphics
+  # comment Sync and hybrid for Pure offload mode
+  # comment sync and uncomment other 2 for 2 boot entry rebuilds
+
+  # Sync mode (always use dedicated)
+
+  ###  hardware.nvidia.prime = {
+  ###    sync.enable = true;
+  ###
+  ###    # integrated
+  ###    amdgpuBusId = "PCI:6:0:0";
+  ###
+  ###    # dedicated
+  ###    nvidiaBusId = "PCI:1:0:0";
+  ###
+  ###  };
+
   # Offload mode (use integerated and offload to dedicated when run with enableoffload cmd)
 
   hardware.nvidia.prime = {
@@ -102,20 +111,20 @@ in
     # dedicated
     nvidiaBusId = "PCI:1:0:0";
   };
-  ######################
-  ######################  # Hybrid mode - give 2 boot entries per rebuild
-  ######################
-  ######################  ### specialisation = {
-  ######################  ###   gaming.configuration = {
-  ######################  ###
-  ######################  ###     hardware.nvidia = {
-  ######################  ###       prime.sync.enable = lib.mkForce true;
-  ######################  ###       prime.offload.enable = lib.mkForce false;
-  ######################  ###       prime.offload.enableOffloadCmd = lib.mkForce false;
-  ######################  ###
-  ######################  ###     };
-  ######################  ###   };
-  ######################  ### };
-  ######################
+
+  # Hybrid mode - give 2 boot entries per rebuild
+
+  ### specialisation = {
+  ###   gaming.configuration = {
+  ###
+  ###     hardware.nvidia = {
+  ###       prime.sync.enable = lib.mkForce true;
+  ###       prime.offload.enable = lib.mkForce false;
+  ###       prime.offload.enableOffloadCmd = lib.mkForce false;
+  ###
+  ###     };
+  ###   };
+  ### };
+
 }
 

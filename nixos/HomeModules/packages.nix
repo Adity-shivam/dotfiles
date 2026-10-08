@@ -30,14 +30,20 @@
     blender
     fritzing
     logisim
+    ltspice
     winboat
     discord
 
     gcc
+    python3
+
+    vscode
+
     kitty
 
     mpv
 
+    ytmdesktop
     inputs.zen-browser.packages.x86_64-linux.default
   ];
 

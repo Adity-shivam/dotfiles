@@ -186,9 +186,9 @@ in
         keyformat = {
           "<CR>" = "Enter";
         };
-        maxkeys = 5;
+        maxkeys = 3;
         position = "top-right";
-        timeout = 5;
+        timeout = 3;
       };
     };
 
@@ -236,6 +236,8 @@ in
       enable = true;
       settings = { };
     };
+
+    mini-pairs.enable = true;
 
     smear-cursor = {
       enable = true;
@@ -452,5 +454,6 @@ in
     toggler.enable = true;
 
   };
+
 }
 

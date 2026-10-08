@@ -1,5 +1,13 @@
 { pkgs, inputs, ... }:
 
+let
+  ltspice = pkgs.ltspice.overrideAttrs (oldAttrs: {
+    src = oldAttrs.src.overrideAttrs (_: {
+      hash = "sha256-IQxrgX5kcwhBGWlSzWj9HmkMlzwCou+EsE8k92qU9EY=";
+    });
+  });
+in
+
 {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [ "electron-40.10.5" ];
@@ -30,7 +38,6 @@
     blender
     fritzing
     logisim
-    ltspice
     winboat
     discord
 
@@ -42,6 +49,9 @@
     kitty
 
     mpv
+
+    # hash mismatch currently
+    ltspice
 
     ytmdesktop
     inputs.zen-browser.packages.x86_64-linux.default

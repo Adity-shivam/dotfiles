@@ -11,8 +11,11 @@
     };
 
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+
     };
 
     nixvim = {
@@ -37,9 +40,11 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+
           inputs.home-manager.nixosModules.default
           inputs.nixvim.nixosModules.nixvim
           inputs.stylix.nixosModules.stylix
+
         ];
       };
     };

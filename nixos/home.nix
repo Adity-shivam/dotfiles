@@ -6,7 +6,10 @@
 }:
 
 {
-  imports = [ ./HomeModules ];
+  imports = [
+    ./HomeModules
+    inputs.zen-browser.homeModules.beta
+  ];
 
   home.username = "adi";
   home.homeDirectory = "/home/adi";

@@ -4,6 +4,7 @@
     ./git.nix
     ./packages.nix
     ./wacom_otd_startup.nix
+    ./zen-browser.nix
   ];
 }
 

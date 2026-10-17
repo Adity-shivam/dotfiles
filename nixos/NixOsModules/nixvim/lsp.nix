@@ -140,26 +140,43 @@ in
         };
       };
 
-      basedpyright = {
+      pyright = {
         enable = true;
         activate = true;
         config = {
           root_markers = [
             "pyproject.toml"
-            "basedpyright.json"
+            "pyrightconfig.json"
             ".git"
           ];
-
           filetypes = [
             "python"
           ];
           cmd = [
-            "basedpyright-langserver"
+            "pyright-langserver"
             "--stdio"
           ];
         };
-
       };
+
+      # basedpyright = {
+      #   enable = true;
+      #   activate = true;
+      #   config = {
+      #     root_markers = [
+      #       "pyproject.toml"
+      #       "basedpyright.json"
+      #       ".git"
+      #     ];
+      #     filetypes = [
+      #       "python"
+      #     ];
+      #     cmd = [
+      #       "basedpyright-langserver"
+      #       "--stdio"
+      #     ];
+      #   };
+      # };
 
     };
 

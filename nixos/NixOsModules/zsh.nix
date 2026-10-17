@@ -11,14 +11,20 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    enableLsColors = true;
 
+    interactiveShellInit = ''
+      bindkey '^A' beginning-of-line
+      bindkey '^E' end-of-line
+    '';
     # ohMyZsh.enable = true;
 
     shellAliases = {
       cl = "clear";
       v = "nvim";
-      ".." = "cd ..";
       # v = "vim";
+      ".." = "cd ..";
+      logout = "loginctl terminate-user $(id -u)";
     };
   };
 

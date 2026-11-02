@@ -23,10 +23,10 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stylix = {
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
   };
 
@@ -43,7 +43,7 @@
 
           inputs.home-manager.nixosModules.default
           inputs.nixvim.nixosModules.nixvim
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
 
         ];
       };

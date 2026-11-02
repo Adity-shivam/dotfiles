@@ -453,6 +453,7 @@ in
 
     toggler.enable = true;
 
+    colorizer.enable = true;
   };
 
 }

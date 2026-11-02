@@ -18,7 +18,8 @@
 
     vim.api.nvim_create_autocmd("VimEnter", {
       callback = function()
-        vim.cmd("ShowkeysToggle")
+        vim.cmd("ShowkeysToggle")  -- Turn Showkeys on by default
+        vim.cmd("ColorizerToggle") -- Turn Colorizer off by default
       end,
     })
 
@@ -26,3 +27,4 @@
 
   '';
 }
+

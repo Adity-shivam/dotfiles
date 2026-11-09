@@ -29,7 +29,11 @@
     freecad
     blender
     fritzing
+
     ltspice
+
+    quartus-prime-lite
+
     logisim
     winboat
     discord

@@ -178,6 +178,20 @@ in
       #   };
       # };
 
+      veridian = {
+        enable = true;
+        activate = true;
+
+        config = {
+          cmd = [ "veridian" ];
+          filetypes = [
+            "systemverilog"
+            "verilog"
+          ];
+          root_markers = [ ".git" ];
+        };
+      };
+
     };
 
   };

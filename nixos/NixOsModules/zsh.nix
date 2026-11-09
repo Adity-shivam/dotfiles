@@ -16,6 +16,9 @@
     interactiveShellInit = ''
       bindkey '^A' beginning-of-line
       bindkey '^E' end-of-line
+
+      bindkey '^[[1;5D' backward-word
+      bindkey '^[[1;5C' forward-word
     '';
     # ohMyZsh.enable = true;
 

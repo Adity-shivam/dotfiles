@@ -3,6 +3,8 @@
 
   services.desktopManager.gnome.enable = true;
 
+  environment.systemPackages = [ pkgs.quartus-prime-lite ];
+
   services.udev.extraRules = ''
     # USB-Blaster
     SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666"

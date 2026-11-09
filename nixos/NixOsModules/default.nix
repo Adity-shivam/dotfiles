@@ -21,6 +21,9 @@
     # ./nvf.nix
     ./packages.nix
     # ./printing.nix
+
+    ./quartus.nix
+
     # ./stylix.nix
     ./time-zone.nix
     ./users.nix

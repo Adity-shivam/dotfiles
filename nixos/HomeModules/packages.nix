@@ -32,8 +32,6 @@
 
     ltspice
 
-    quartus-prime-lite
-
     logisim
     winboat
     discord

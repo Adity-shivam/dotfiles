@@ -28,6 +28,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
+    # nixpkgs-veridian = {
+    #   url = "github:NixOS/nixpkgs/master";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
   };
 
   outputs =

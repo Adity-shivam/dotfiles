@@ -15,7 +15,7 @@
     # cosmic-ext-tweaks
     cosmic-ext-applet-minimon
     cosmic-ext-applet-privacy-indicator
-    cosmic-ext-applet-weather
+    # cosmic-ext-applet-weather
 
     # snapshot
     # gnome-sound-recorder

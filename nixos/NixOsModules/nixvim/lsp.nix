@@ -2,6 +2,11 @@
 
 let
   lib = inputs.nixvim.lib;
+
+  # veridianPkgs = import inputs.nixpkgs-veridian {
+  #   system = pkgs.stdenv.hostPlatform.system;
+  # };
+
 in
 
 # TODO: add plugins
@@ -89,110 +94,145 @@ in
   #   };
   # };
 
-  programs.nixvim.lsp = {
-    servers = {
-      "*" = {
-        config = {
-          capabilities = {
-            textDocument = {
-              semanticTokens = {
-                multilineTokenSupport = true;
-              };
-            };
-          };
-          root_markers = [
-            ".git"
-          ];
-        };
-      };
-      clangd = {
-        config = {
-          cmd = [
-            "clangd"
-            "--background-index"
-          ];
-          filetypes = [
-            "c"
-            "cpp"
-          ];
-          root_markers = [
-            "compile_commands.json"
-            "compile_flags.txt"
-          ];
-        };
-        enable = true;
-      };
-      lua_ls = {
-        enable = true;
-      };
-      nixd = {
-        enable = true;
-        config = {
-          settings = {
-            nixd = {
-              options = {
-                nixos = {
-                  expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.Nix-Chan.options";
-                };
-              };
+  programs.nixvim.lsp.servers = {
+    "*" = {
+      config = {
+        capabilities = {
+          textDocument = {
+            semanticTokens = {
+              multilineTokenSupport = true;
             };
           };
         };
+        root_markers = [
+          ".git"
+        ];
       };
-
-      pyright = {
-        enable = true;
-        activate = true;
-        config = {
-          root_markers = [
-            "pyproject.toml"
-            "pyrightconfig.json"
-            ".git"
-          ];
-          filetypes = [
-            "python"
-          ];
-          cmd = [
-            "pyright-langserver"
-            "--stdio"
-          ];
-        };
-      };
-
-      # basedpyright = {
-      #   enable = true;
-      #   activate = true;
-      #   config = {
-      #     root_markers = [
-      #       "pyproject.toml"
-      #       "basedpyright.json"
-      #       ".git"
-      #     ];
-      #     filetypes = [
-      #       "python"
-      #     ];
-      #     cmd = [
-      #       "basedpyright-langserver"
-      #       "--stdio"
-      #     ];
-      #   };
-      # };
-
-      veridian = {
-        enable = true;
-        activate = true;
-
-        config = {
-          cmd = [ "veridian" ];
-          filetypes = [
-            "systemverilog"
-            "verilog"
-          ];
-          root_markers = [ ".git" ];
-        };
-      };
-
     };
+
+    clangd = {
+      config = {
+        cmd = [
+          "clangd"
+          "--background-index"
+        ];
+        filetypes = [
+          "c"
+          "cpp"
+        ];
+        root_markers = [
+          "compile_commands.json"
+          "compile_flags.txt"
+        ];
+      };
+      enable = true;
+    };
+
+    lua_ls = {
+      enable = true;
+    };
+
+    nixd = {
+      enable = true;
+      config = {
+        settings = {
+          nixd = {
+            options = {
+              nixos = {
+                expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.Nix-Chan.options";
+              };
+            };
+          };
+        };
+      };
+    };
+
+    pyright = {
+      enable = true;
+      activate = true;
+      config = {
+        root_markers = [
+          "pyproject.toml"
+          "pyrightconfig.json"
+          ".git"
+        ];
+        filetypes = [
+          "python"
+        ];
+        cmd = [
+          "pyright-langserver"
+          "--stdio"
+        ];
+
+      };
+    };
+    #### better for strict type checking - annoying for numpy stuff
+
+    # basedpyright = {
+    #   enable = true;
+    #   activate = true;
+    #   config = {
+    #     root_markers = [
+    #       "pyproject.toml"
+    #       "basedpyright.json"
+    #       ".git"
+    #     ];
+    #     filetypes = [
+    #       "python"
+    #     ];
+    #     cmd = [
+    #       "basedpyright-langserver"
+    #       "--stdio"
+    #     ];
+    #   };
+    # };
+
+    #### verdian's sv-parser-parser dependency has unspecified version specifier, doesn't build
+
+    # veridian = {
+    #   enable = true;
+    #   activate = true;
+    #   config = {
+    #     cmd = [ "veridian" ];
+    #     filetypes = [
+    #       "systemverilog"
+    #       "verilog"
+    #     ];
+    #     root_markers = [ ".git" ];
+    #   };
+    #   package = veridianPkgs.veridian;
+    # };
+
+    verible = {
+      enable = true;
+      activate = true;
+      config = {
+        cmd = [ "verible-verilog-ls" ];
+        filetypes = [
+          "systemverilog"
+          "verilog"
+        ];
+        root_markers = [
+          ".git"
+          "verible.filelist"
+        ];
+      };
+    };
+
+    # svls = {
+    #   enable = true;
+    #   activate = true;
+    #   config = {
+    #     cmd = [ "svls" ];
+    #     filetypes = [
+    #       "systemverilog"
+    #       "verilog"
+    #     ];
+    #     root_markers = [
+    #       ".git"
+    #     ];
+    #   };
+    # };
 
   };
 
@@ -288,6 +328,7 @@ in
     blink-cmp = {
       enable = true;
       setupLspCapabilities = true;
+
       settings = {
         appearance = {
           nerd_font_variant = "normal";
@@ -312,7 +353,32 @@ in
         signature = {
           enabled = true;
         };
+
+        #####
+        # sources.default = [
+        #   "lsp"
+        #   "path"
+        #   "buffer"
+        # ];
+
         sources = {
+
+          per_filetype = {
+            verilog = [
+              "lsp"
+              "path"
+              "buffer"
+              # "sv_keywords"
+            ];
+
+            systemverilog = [
+              "lsp"
+              "path"
+              "buffer"
+              # "sv_keywords"
+            ];
+          };
+
           cmdline = [ ];
           providers = {
             buffer = {

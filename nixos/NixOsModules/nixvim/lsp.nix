@@ -306,6 +306,23 @@ in
 
     lint = {
       enable = true;
+
+      linters.verilator = {
+        cmd = "verilator";
+        args = [
+          "--lint-only"
+          "--sv"
+          "--Wall"
+          "--timing"
+        ];
+        stream = "stderr";
+        ignore_exitcode = true;
+      };
+
+      lintersByFt = {
+        verilog = [ "verilator" ];
+        systemverilog = [ "verilator" ];
+      };
     };
 
     nvim-ufo = {

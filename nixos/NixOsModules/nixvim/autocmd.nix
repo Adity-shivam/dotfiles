@@ -23,6 +23,27 @@
       end,
     })
 
+
+
+
   '';
+
+  programs.nixvim.autoCmd = [
+    {
+      event = [ "BufWritePost" ];
+      pattern = [
+        "*.v"
+        "*.sv"
+      ];
+      callback = {
+        __raw = ''
+          function()
+            require("lint").try_lint()
+          end
+        '';
+      };
+    }
+  ];
+
 }
 

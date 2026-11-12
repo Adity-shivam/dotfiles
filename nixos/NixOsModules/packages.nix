@@ -15,6 +15,8 @@
     vim
     git
     ripgrep
+
+    gnumake
   ];
 
   fonts.packages = with pkgs; [

@@ -3,7 +3,15 @@
 
   services.desktopManager.gnome.enable = true;
 
-  environment.systemPackages = [ pkgs.quartus-prime-lite ];
+  environment.systemPackages = with pkgs; [
+    quartus-prime-lite
+
+    iverilog
+    verilator
+    gtkwave
+    verible
+
+  ];
 
   services.udev.extraRules = ''
     # USB-Blaster

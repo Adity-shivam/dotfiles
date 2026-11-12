@@ -37,6 +37,7 @@
     discord
 
     gcc
+
     python3
 
     vscode

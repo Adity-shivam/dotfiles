@@ -6,6 +6,7 @@
 
     ./cosmic.nix
     ./mango-wc.nix
+    ./niri.nix
 
     ./fstrim.nix
     ./gaming.nix

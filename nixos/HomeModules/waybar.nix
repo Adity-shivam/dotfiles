@@ -11,7 +11,7 @@
       spacing = 8;
 
       modules-left = [
-        "mango/workspaces"
+        "ext/workspaces"
         "mango/layout"
         "mango/window"
       ];
@@ -29,13 +29,23 @@
         "tray"
       ];
 
-      "mango/workspaces" = {
-        format = "{icon}";
-        hide-empty = false;
+      "ext/workspaces" = {
+        format = "{id}";
+        format-icons = {
+          "1" = "1";
+          "2" = "2";
+          "3" = "3";
+          "4" = "4";
+          "5" = "5";
+          "6" = "6";
+          "7" = "7";
+          "8" = "8";
+          "9" = "9";
+        };
         on-click = "activate";
         on-click-right = "toggle";
+        sort-by-number = true;
       };
-
       "mango/layout" = {
         format = "{}";
       };
@@ -115,32 +125,67 @@
     trackpad_natural_scrolling=0
     trackpad_disable_while_typing=1
 
+    # Animations
+    animations=1
+
+    # Vertical workspace transitions
+    tag_animation_direction=0
+
+    # Animation duration
+    animation_duration_tag=350
+
+    # Smooth easing
+    animation_curve_tag=0.46,1.0,0.29,1
+
     # Gestures
     gesture_live=1
     gesture_swipe_distance=300
 
-    gesturebind=NONE,left,4,viewnext_have_client
-    gesturebind=NONE,right,4,viewprev_have_client
+    # Set all tags (workspaces) to horizontal scrolling
+    tag_rule=id:*,layout_name:scroller
 
-    gesturebind=NONE,up,4,enteroverview
-    gesturebind=NONE,down,4,leaveoverview
+    # Four-finger vertical workspace navigation
+    gesturebind=none,up,4,viewprev_have_client
+    gesturebind=none,down,4,viewnext_have_client
 
-    # Three-finger window focus
-    gesturebind=NONE,left,3,focusdir,left
-    gesturebind=NONE,right,3,focusdir,right
+    # Three-finger horizontal window navigation
+    # gesturebind=none,left,3,focusdir,left
+    # gesturebind=none,right,3,focusdir,right
+
+    # Three-finger horizontal window switching
+    gesturebind=none,left,3,focusstack,prev
+    gesturebind=none,right,3,focusstack,next
+
+
+    # Overview
+    bind=SUPER,SPACE,toggleoverview
 
     # Workspace shortcuts
-    ${builtins.concatStringsSep "\n" (
-      map (n: "bind=SUPER,${toString n},view,${toString n},0") (builtins.genList (i: i + 1) 9)
-    )}
+    bind=SUPER,1,view,1,0
+    bind=SUPER,2,view,2,0
+    bind=SUPER,3,view,3,0
+    bind=SUPER,4,view,4,0
+    bind=SUPER,5,view,5,0
+    bind=SUPER,6,view,6,0
+    bind=SUPER,7,view,7,0
+    bind=SUPER,8,view,8,0
+    bind=SUPER,9,view,9,0
 
     # Move windows to workspaces
-    ${builtins.concatStringsSep "\n" (
-      map (n: "bind=SUPER+SHIFT,${toString n},tag,${toString n},0") (builtins.genList (i: i + 1) 9)
-    )}
+    bind=SUPER+SHIFT,1,tag,1,0
+    bind=SUPER+SHIFT,2,tag,2,0
+    bind=SUPER+SHIFT,3,tag,3,0
+    bind=SUPER+SHIFT,4,tag,4,0
+    bind=SUPER+SHIFT,5,tag,5,0
+    bind=SUPER+SHIFT,6,tag,6,0
+    bind=SUPER+SHIFT,7,tag,7,0
+    bind=SUPER+SHIFT,8,tag,8,0
+    bind=SUPER+SHIFT,9,tag,9,0
+
+
 
     # Basic controls
-    bind=SUPER,Return,spawn,foot
+    bind=SUPER,Return,spawn,cosmic-term
     bind=SUPER,D,spawn,wmenu-run
     bind=SUPER,Q,killclient
     bind=SUPER,F,togglefullscreen
@@ -148,6 +193,7 @@
 
     # Start bar
     exec_once=waybar
+
   '';
 
 }

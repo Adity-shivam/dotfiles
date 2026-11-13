@@ -47,6 +47,7 @@
     mpv
 
     ytmdesktop
+    pear-desktop
   ];
 
 }

@@ -38,7 +38,7 @@
       ll = "eza -lah --icons --git";
       tree = "eza --tree --icons";
 
-      cat = "bat";
+      cat = "bat --style=plain --paging=never";
 
     };
   };
@@ -48,6 +48,15 @@
     enableZshIntegration = true;
 
     settings = {
+
+      nix_shell = {
+        disabled = false;
+        heuristic = true;
+        symbol = "❄️ ";
+        style = "bold blue";
+        format = "[$symbol$state( \\($name\\))]($style) ";
+      };
+
       add_newline = true;
 
       format = ''

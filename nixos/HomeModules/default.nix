@@ -5,6 +5,7 @@
     ./packages.nix
     ./wacom_otd_startup.nix
     ./zen-browser.nix
+    ./waybar.nix
   ];
 }
 

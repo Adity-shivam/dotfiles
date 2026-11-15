@@ -4,4 +4,9 @@
     layout = "us";
     variant = "";
   };
+
+  # services.keyd = {
+  #   enable = true;
+  # };
 }
+

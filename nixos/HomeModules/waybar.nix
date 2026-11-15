@@ -1,6 +1,7 @@
 { ... }:
 
 {
+
   programs.waybar = {
     enable = true;
 
@@ -11,9 +12,7 @@
       spacing = 8;
 
       modules-left = [
-        "ext/workspaces"
-        "mango/layout"
-        "mango/window"
+        "niri/workspaces"
       ];
 
       modules-center = [
@@ -29,30 +28,10 @@
         "tray"
       ];
 
-      "ext/workspaces" = {
-        format = "{id}";
-        format-icons = {
-          "1" = "1";
-          "2" = "2";
-          "3" = "3";
-          "4" = "4";
-          "5" = "5";
-          "6" = "6";
-          "7" = "7";
-          "8" = "8";
-          "9" = "9";
-        };
-        on-click = "activate";
-        on-click-right = "toggle";
-        sort-by-number = true;
-      };
-      "mango/layout" = {
-        format = "{}";
-      };
-
-      "mango/window" = {
-        format = "{}";
-        max-length = 40;
+      "niri/workspaces" = {
+        format = "{value}";
+        sort-by-name = true;
+        display-condition = "keep-named";
       };
 
       clock = {
@@ -79,6 +58,7 @@
         format-charging = "󰂄 {capacity}%";
       };
     };
+
     style = ''
       * {
         font-family: "JetBrainsMono Nerd Font";
@@ -105,14 +85,17 @@
       }
 
       #clock, #cpu, #memory, #network,
-      #pulseaudio, #battery, #tray, #layout,
-      #window {
+      #pulseaudio, #battery, #tray {
         padding: 0 10px;
         margin: 4px;
         background: #313244;
         border-radius: 6px;
       }
     '';
+  };
+
+  xdg.configFile."niri/config.kdl" = {
+    source = ./../EmbeddedDots/niri_config.kdl;
   };
 
   xdg.configFile."mango/config.conf".text = ''

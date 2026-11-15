@@ -234,27 +234,26 @@ in
     #   };
     # };
 
-    matlab_ls = {
-      enable = true;
-      activate = true;
-      config = {
-        cmd = [
-          "matlab-language-server"
-          "--stdio"
-        ];
-        filetypes = [ "matlab" ];
-        root_markers = [ ".git" ];
-
-        settings = {
-          MATLAB = {
-            installPath = "/home/adi/Projects/Matlab_FHS/Install_Folder";
-            indexWorkspace = true;
-            matlabConnectionTiming = "onStart";
-            telemetry = false;
-          };
-        };
-      };
-    };
+    # matlab_ls = {
+    #   enable = true;
+    #   activate = true;
+    #   config = {
+    #     cmd = [
+    #       "matlab-language-server"
+    #       "--stdio"
+    #     ];
+    #     filetypes = [ "matlab" ];
+    #     root_markers = [ ".git" ];
+    #     settings = {
+    #       MATLAB = {
+    #         installPath = "/home/adi/Projects/Matlab_FHS/Install_Folder";
+    #         indexWorkspace = true;
+    #         matlabConnectionTiming = "onStart";
+    #         telemetry = false;
+    #       };
+    #     };
+    #   };
+    # };
 
   };
 

@@ -40,6 +40,7 @@
 
       cat = "bat --style=plain --paging=never";
 
+      matlab = "~/Projects/Matlab_FHS/matlab_script";
     };
   };
 

@@ -59,6 +59,68 @@
       };
     };
 
+    #style = ''
+    #  * {
+    #    font-family: "JetBrainsMono Nerd Font";
+    #    font-size: 12px;
+    #    border: none;
+    #    min-height: 0;
+    #  }
+
+    #  window#waybar {
+    #    background: #002b36;
+    #    color: #839496;
+    #  }
+
+    #  #workspaces button {
+    #    padding: 0 8px;
+    #    color: #586e75;
+    #    background: transparent;
+    #  }
+
+    #  #workspaces button.active {
+    #    color: #002b36;
+    #    background: #2aa198;
+    #    border-radius: 6px;
+    #  }
+
+    #  #workspaces button:hover {
+    #    color: #93a1a1;
+    #    background: #073642;
+    #    border-radius: 6px;
+    #  }
+
+    #  #clock, #cpu, #memory, #network,
+    #  #pulseaudio, #battery, #tray {
+    #    padding: 0 10px;
+    #    margin: 4px;
+    #    background: #073642;
+    #    color: #93a1a1;
+    #    border-radius: 6px;
+    #  }
+
+    #  #battery.charging {
+    #    color: #859900;
+    #  }
+
+    #  #battery.warning {
+    #    color: #b58900;
+    #  }
+
+    #  #battery.critical {
+    #    color: #dc322f;
+    #  }
+
+    #  #pulseaudio.muted {
+    #    color: #586e75;
+    #  }
+
+    #  #network.disconnected {
+    #    color: #dc322f;
+    #  }
+    #'';
+    #};
+
     style = ''
       * {
         font-family: "JetBrainsMono Nerd Font";

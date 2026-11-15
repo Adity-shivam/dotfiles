@@ -17,6 +17,9 @@
     slurp
     swaybg
 
+    awww
+    waypaper
+
     playerctl
     brightnessctl
     pavucontrol

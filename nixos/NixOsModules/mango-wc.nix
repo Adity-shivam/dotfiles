@@ -8,7 +8,7 @@
     wl-clipboard
     grim
     slurp
-    swaybg
+    # swaybg
 
   ];
 

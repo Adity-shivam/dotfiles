@@ -30,6 +30,9 @@
     ./users.nix
     ./virtualisation.nix
     ./wacom.nix
+
+    ./XDG.nix
+
     ./zoxide.nix
     ./zram.nix
     ./zsh.nix

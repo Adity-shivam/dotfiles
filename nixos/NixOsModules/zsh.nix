@@ -34,8 +34,8 @@
       ".." = "cd ..";
       logout = "loginctl terminate-user $(id -u)";
 
-      ls = "eza --icons";
-      ll = "eza -lah --icons --git";
+      ls = "eza --icons always";
+      ll = "eza -lah --icons always --git";
       tree = "eza --tree --icons";
 
       cat = "bat --style=plain --paging=never";

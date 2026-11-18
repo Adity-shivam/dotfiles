@@ -24,7 +24,8 @@ input {
 // layout configuration
 layout {
     gaps 16
-    center-focused-column "never"
+    // center-focused-column "never"
+    center-focused-column "always"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -50,7 +51,7 @@ layout {
         active-color "#00FFE9"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        // inactive-color "#505050"
 
     }
     struts {
@@ -95,7 +96,6 @@ workspace "5"
 workspace "6"
 workspace "7"
 workspace "8"
-workspace "9"
 
 // Animation settings.
 // The wiki explains how to configure individual animations:
@@ -108,7 +108,6 @@ animations {
 // https://niri-wm.github.io/niri/Configuration:-Window-Rules
 
 window-rule {
-    // wezterm bug
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 
@@ -125,6 +124,11 @@ window-rule {
 window-rule {
     match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    match app-id=r#"zen-beta$"#
+    default-column-width { proportion 0.7; }
 }
 
 // Example: block out two password managers from screen capture.
@@ -201,7 +205,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
 
@@ -368,7 +372,9 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
 
     Mod+F { maximize-column; }
-    // Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+F { fullscreen-window; }
+    // Mod+Shift+F { maximize-window-to-edges; }
+    // this doesn't remove the bar and stuff while fullscreen-window remove the bar
 
     // While maximize-column leaves gaps and borders around the window,
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
@@ -376,8 +382,6 @@ binds {
     // e.g. by double-clicking on the titlebar.
 
     // Mod+M { maximize-window-to-edges; }
-    // this doesn't remove the bar and stuff while fullscreen-window remove the bar
-    Mod+Shift+F { maximize-window-to-edges; }
     
 
 
